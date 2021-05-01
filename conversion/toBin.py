@@ -21,7 +21,7 @@ def toBin(x):
 
         print("The number to convert :", x, end='\n')
 
-        #We split each number of x in a list
+       #We split each number composing x in a list
         numberTypeCheck = [ch for ch in leNombre]
 
 
@@ -105,7 +105,7 @@ def toBin(x):
             
             elif numberTypeCheck[1]=='o':
 
-                print("The number you are tryhing to convert is already in base-16.")
+                print("The number you are trying to convert is already in base-16.")
 
                 return x
                     

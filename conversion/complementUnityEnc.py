@@ -1,7 +1,7 @@
 #!/usr/bin/python
-from .toBin import toBin
-from .toHexa import toHexa
-from .toOct import toOct
+from toBin import toBin
+from toOct import toOct
+from toHexa import toHexa
 
 def complementUnityEnc(nb, base, n):
     """
@@ -24,6 +24,19 @@ def complementUnityEnc(nb, base, n):
     #We insure the base is correct and the number is a negative one
     if (base in bases) and (str(nb)[0] == '-') :
 
+        #The parameter n is important to be checked : a base-8 number can't be represented on less than 3 bits.
+        #Same thing for base-16 number : they can't be represented on less than 4 bits
+
+        if base == 8 and n < 3 :
+
+            n = 3
+            print("Careful, a base-8 number can't be represented on less than 3 bits. n has been set on 3 by default")
+        
+        elif base == 16 and n < 4:
+
+            n = 4
+            print("Careful, a base-8 number can't be represented on less than 4 bits. n has been set on 4 by default")
+        
         #Note : We are working with absolute values, so there is no need to handle the number's sign
         #To make this conversion & the calculations easier, I will work with integers in base 10 + the abs() function
 
@@ -42,15 +55,15 @@ def complementUnityEnc(nb, base, n):
 
         if base == 2:
 
-            return toBin(prefix.get(base) + complU)
+            return toBin(prefix.get(base) + str(complU))
         
         elif base == 8:
 
-            return toOct(prefix.get(base) + complU)
+            return toOct(prefix.get(base) + str(complU))
         
         elif base == 16:
 
-            return toHexa(prefix.get(base) + complU)
+            return toHexa(prefix.get(base) + str(complU))
         
         else:
 
@@ -61,4 +74,3 @@ def complementUnityEnc(nb, base, n):
         print("A number in this base can't be converted. This method can only give the Unity complement of bases 2 8 10 or 16.")
         print("There is no point in giving the complement to unity of a positive number, because it is exactly the same value.")
         return complU
-
