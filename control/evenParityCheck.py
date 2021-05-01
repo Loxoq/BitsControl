@@ -8,7 +8,7 @@ def evenParityCheck(bin):
 
         bin : A binary number on which an even parity check will be done. The number must begin by "Ob".
     
-    Out : The number put as a parameter with a parity bit.
+    Out : The number given as a parameter with a parity bit.
     """
     
     ret = "null"
