@@ -2,7 +2,8 @@
 def toHexa(x):
 
     """
-    This function convert a number from base2, 8, 10 to base-16.
+    This function convert a number from base2 (0b), 8(0o), 10 to base-16(0x).
+    In order the function to work correctly, add the correct prefix if the number's base isn't 10.
     
     Parameters:
 

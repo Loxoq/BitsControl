@@ -2,7 +2,9 @@
 def toBin(x):
 
     """
-    This function convert a number from base-8, 10, 16 to base-2.
+    This function convert a number from base-8 (0o), 10, 16(0x) to base-2(0b).
+    In order the function to work correctly, add the correct prefix if the number's base isn't 10.
+
     
     Parameters:
 

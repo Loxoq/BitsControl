@@ -2,7 +2,8 @@
 def toOct(x):
 
     """
-    This function convert a number from base2, 10, 16 to base-8.
+    This function convert a number from base2(0b), 10, 16(0x) to base-8(0o).
+    In order the function to work correctly, add the correct prefix if the number's base isn't 10.
     
     Parameters:
 
