@@ -13,7 +13,7 @@ def toBin(x):
     Out : The x number in its binary form 
     """
 
-    y = "Null"
+    y = None
 
     #We convert x as a string to check its base
     leNombre = str(x)
@@ -34,7 +34,6 @@ def toBin(x):
 
         except:
                     
-            print("No decimal point.")
             dec = False
 
         if numberTypeCheck[0] == '-':

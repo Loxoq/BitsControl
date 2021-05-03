@@ -12,7 +12,7 @@ def toHexa(x):
     Out : The x number in its hexadecimal form 
     """
 
-    y = "Null"
+    y = None
 
     #We convert x as a string to check its base
     leNombre = str(x)
@@ -32,8 +32,7 @@ def toHexa(x):
             dec = True
 
         except:
-                    
-            print("No decimal point.")
+            
             dec = False
 
         if numberTypeCheck[0] == '-':
